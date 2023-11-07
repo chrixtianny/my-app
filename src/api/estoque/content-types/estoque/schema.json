@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estoques",
+  "info": {
+    "singularName": "estoque",
+    "pluralName": "estoques",
+    "displayName": "Estoque",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "quantidade": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer"
+    },
+    "disponivel": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": true
+    },
+    "produto": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::produto.produto",
+      "mappedBy": "estoque"
+    }
+  }
+}
